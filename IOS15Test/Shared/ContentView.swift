@@ -25,22 +25,34 @@ struct ContentView: View {
             Text("20sections - 2 hours")
                 .font(.footnote)
                 .fontWeight(.semibold)
+                .foregroundColor(.secondary)
             
             Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
                 .lineLimit(2)
+                .frame(maxWidth:.infinity,alignment:.leading)
+                .foregroundColor(.secondary)
         }
         .padding(.all, 20.0)
+        .padding(.vertical,20)
         .frame(height:350)
         .background(Color("Background"))
         .cornerRadius(30.0)
-        .shadow(radius: 20)
+        .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
+        .padding(.horizontal,20)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+//                .preferredColorScheme(.dark)
+//            ContentView()
+//                .preferredColorScheme(.dark)
+//                .environment(\.sizeCategory, .accessibilityLarge)
+//                .previewDevice("iPhone 13 mini")
+        }
     }
 }
